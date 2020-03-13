@@ -109,3 +109,11 @@ setenforce 0
 ldapadd -x -W -D "cn=ldapadm,dc=nti310,dc=local" -f base.ldif -y /root/ldap_admin_pass
 
 systemctl restart httpd
+
+apt-get install nfs-client
+
+showmount -e $ipaddress # where #ip address is the ip of your nfs server
+mkdir /mnt/test
+#internal IP of NFS Server
+echo "10.138.0.7:/var/nfsshare/testing    /mnt/test     nfs   defaults 0 0" >> /etc/fstab
+mount -a
