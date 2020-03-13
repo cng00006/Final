@@ -45,5 +45,5 @@ apt-get install nfs-client
 showmount -e $ipaddress # where #ip address is the ip of your nfs server
 mkdir /mnt/test
 #internal IP of NFS Server
-echo "10.128.0.29:/var/nfsshare/testing    /mnt/test     nfs   defaults 0 0" >> /etc/fstab
+echo "10.128.0.35:/var/nfsshare/testing    /mnt/test     nfs   defaults 0 0" >> /etc/fstab
 mount -a
