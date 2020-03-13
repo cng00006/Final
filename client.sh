@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "*.info;mail.none;authpriv.none;cron.none   @rsyslog-server2" >> /etc/rsyslog.conf && systemctl restart rsyslog.service
+#Important: this should be the internal not external IP of the server or the dns name of your server.
+#logsrv is what I named it to avoid complications
+
 apt-get update
 export DEBIAN_FRONTEND=noninteractive
 apt -y install libnss-ldap libpam-ldap ldap-utils
