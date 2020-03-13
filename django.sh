@@ -1,6 +1,8 @@
 #!/bin/bash
 # fun django turorial https://data-flair.training/blogs/django-migrations-and-database-connectivity/
 
+echo "*.info;mail.none;authpriv.none;cron.none   @rsyslog-server2" >> /etc/rsyslog.conf && systemctl restart rsyslog.service
+
 yum -y install python-pip python-devel gcc postgresql-devel postgresql-contrib
 pip install --upgrade pip
 pip install virtualenv
