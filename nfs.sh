@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "*.info;mail.none;authpriv.none;cron.none   @rsyslog-server2" >> /etc/rsyslog.conf && systemctl restart rsyslog.service
+
 yum install -y nfs-utils
 mkdir /var/nfsshare
 mkdir /var/nfsshare/devstuff
