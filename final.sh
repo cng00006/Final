@@ -25,7 +25,7 @@ gcloud compute instances create nfs-server2 \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=/home/cng00006/Final/nfs.sh \
---private-network-ip=10.128.0.34
+--private-network-ip=10.128.0.35
 gcloud compute instances create postgres-server2 \
 --image-family centos-8 \
 --image-project centos-cloud \
