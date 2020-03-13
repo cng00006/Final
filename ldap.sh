@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "*.info;mail.none;authpriv.none;cron.none   @rsyslog-server2" >> /etc/rsyslog.conf && systemctl restart rsyslog.service
+
 yum install -y git
 cd /tmp
 git clone https://github.com/nic-instruction/hello-nti-310.git
