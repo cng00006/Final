@@ -7,7 +7,7 @@ gcloud compute instances create rsyslog-server2 \
 --machine-type f1-micro \
 --scopes cloud-platform \
 --metadata-from-file startup-script=/home/cng00006/Final/logsrv.sh \
---private-network-ip=10.128.0.27
+--private-network-ip=10.128.0.34
 gcloud compute instances create ldap-server2 \
 --image-family centos-7 \
 --image-project centos-cloud \
