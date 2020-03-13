@@ -1,4 +1,7 @@
 #!/bin/bash
+
+echo "*.info;mail.none;authpriv.none;cron.none   @rsyslog-server2" >> /etc/rsyslog.conf && systemctl restart rsyslog.service
+
 yum -y install python2-pip python3-pip python2-devel python3-devel gcc postgresql-server postgresql-devel postgresql-contrib
 postgresql-setup initdb
 systemctl start postgresql
