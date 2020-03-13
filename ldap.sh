@@ -12,7 +12,7 @@ cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 chown ldap. /var/lib/ldap/DB_CONFIG
 
 systemctl enable slapd
-systemctl start slapd
+systemctl start slap
 
 yum install -y httpd phpldapadmin
 
@@ -37,7 +37,7 @@ systemctl restart httpd
 echo "phpldapadmin is now up and running"
 echo "we are configuring ldap and ldapadmin"
 
-newsecret=$(slappasswd -g)
+newsecret="P@ssw0rd1"
 newhash=$(slappasswd -s "$newsecret")
 echo -n "$newsecret" > /root/ldap_admin_pass
 chmod 0600 /root/ldap_admin_pass
