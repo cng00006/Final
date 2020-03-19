@@ -45,8 +45,8 @@ gcloud compute instances create django-server2 \
 --metadata-from-file startup-script=/home/cng00006/Final/django.sh \
 --private-network-ip=10.128.0.31
 gcloud compute instances create ubuntu-client1 \
---image-family centos-7 \
---image-project centos-cloud \
+--image-family ubuntu-1804-lts \
+--image-project ubuntu-os-cloud \
 --zone us-central1-a \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
@@ -54,8 +54,8 @@ gcloud compute instances create ubuntu-client1 \
 --metadata-from-file startup-script=/home/cng00006/Final/client.sh \
 --private-network-ip=10.128.0.32
 gcloud compute instances create ubuntu-client2 \
---image-family centos-7 \
---image-project centos-cloud \
+--image-family ubuntu-1804-lts \
+--image-project ubuntu-os-cloud \
 --zone us-central1-a \
 --tags "http-server","https-server" \
 --machine-type f1-micro \
