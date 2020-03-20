@@ -124,7 +124,7 @@ dn: cn=ldapadm ,dc=nti310,dc=local
 cn: ldapadm
 decription: LDAP Manager
 \n
-dn: ou-People,dc=nti310,dc=local
+dn: ou=People,dc=nti310,dc=local
 objectClass: organizationalUnit
 ou: People
 \n
