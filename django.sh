@@ -39,7 +39,7 @@ source nti310env/bin/activate
 pip install django psycopg2
 django-admin.py startproject nti310
 #vim /opt/nti310/nti310/settings.py
-echo "perl -i -0pe "BEGIN{undef $/;} s/        'ENGINE':.*db.sqlite3'\),/        'ENGINE': 'django.db.backends.postgresql_psycopg2',\n        'NAME': 'nti310',\n        'USER': 'nti310user',\n        'PASSWORD': 'password',\n        'HOST': 'postgres-server2',\n        'PORT': '5432',/smg" /opt/nti310/nti310/settings.py" > /opt/nti310/nti310/settings.py
+perl -i -0pe "BEGIN{undef $/;} s/        'ENGINE':.*db.sqlite3'\),/        'ENGINE': 'django.db.backends.postgresql_psycopg2',\n        'NAME': 'nti310',\n        'USER': 'nti310user',\n        'PASSWORD': 'password',\n        'HOST': 'postgres-server2',\n        'PORT': '5432',/smg" /opt/nti310/nti310/settings.py
 
 #From the Postgres server:
 sed -i "s/host    all             all             127.0.0.1\/32            md5/host    all             all             0.0.0.0\/0               md5/g" /var/lib/pgsql/data/pg_hba.conf
