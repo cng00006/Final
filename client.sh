@@ -40,7 +40,7 @@ ldap-auth-config        ldap-auth-config/rootbinddn     string  cn=ldapadm,dc=nt
 
 while read line; do echo "$line" | debconf-set-selections; done < /tmp/ldap_debconf
 
-apt-get install nfs-client
+apt-get install -y nfs-client
 
 showmount -e $ipaddress # where #ip address is the ip of your nfs server
 mkdir /mnt/test
