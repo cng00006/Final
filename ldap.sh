@@ -24,10 +24,6 @@ enabled=1" >> /etc/yum.repos.d/local-repo.repo
 
 echo "*.info;mail.none;authpriv.none;cron.none   @rsyslog-server2" >> /etc/rsyslog.conf && systemctl restart rsyslog.service
 
-for file in $( ls /etc/yum.repos.d/ ); do mv /etc/yum.repos.d/$file /etc/yum.repos.d/$file.bak; done
-
-
-
 yum install -y git
 cd /tmp
 git clone https://github.com/nic-instruction/hello-nti-310.git
