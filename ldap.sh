@@ -88,7 +88,7 @@ olcAccess: {0}to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=external, 
 
 ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
 
-openssl req -new -x509 -nodes -out /etc/openldap/certs/nti310ldapcert.pem -keyout /etc/openldap/certs/nti310ldapkey.pem -days 365 -subj "/C=US/ST=WA/L-Seattle/O=SCC/OU=IT/CN=nti310.local"
+openssl req -new -x509 -nodes -out /etc/openldap/certs/nti310ldapcert.pem -keyout /etc/openldap/certs/nti310ldapkey.pem -days 365 -subj "/C=US/ST=WA/L=Seattle/O=SCC/OU=IT/CN=nti310.local"
 
 chown -R ldap. /etc/openldap/certs/nti*.pem
 
@@ -103,6 +103,8 @@ relace: olcTLSCertificateFile
 olcTLSCertificateFile: /etc/openldap/certs/nti310ldapcert.pem" > certs.ldif
 
 ldapmodify -Y EXTERNAL -H ldapi:/// -f certs.ldif
+
+systemctl start slapd
 
 slaptest -u
 echo "it works"
