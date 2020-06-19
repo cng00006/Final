@@ -27,7 +27,7 @@ systemctl enable nagios
 systemctl start nagios
 
 chmod 775 /etc/nagios/servers
-usermod -a -G root cng00006@seattlecentral.edu
+usermod -a -G root cng00006
 
 setenforce 0
 sed -i 's/SELINUX=enforceing/SELINUX=disabled/g' /etc/selinux/config
